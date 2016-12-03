@@ -12,6 +12,7 @@ class MainMenu: SKScene {
   
   var background = SKSpriteNode(imageNamed: "MiniBackground")
   var playButton: RBButton!
+  var settingsButton: RBButton!
   
   enum NodesZPosition: CGFloat {
     case background = 0, button = 1
@@ -19,14 +20,15 @@ class MainMenu: SKScene {
   
   enum RBButtonType: String {
     case Play
+    case settings
   }
   
   override func didMove(to view: SKView) {
-    self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    self.anchorPoint = CGPoint(x: 0.0, y: 0.0)
     
     background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     //background.setScale(0.5)
-    background.position = CGPoint.zero
+    background.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.5)
     background.zPosition = NodesZPosition.background.rawValue
     background.size = CGSize(width: self.frame.width, height: self.frame.height)
     self.addChild(background)
@@ -35,9 +37,17 @@ class MainMenu: SKScene {
       self.didTap(button: .Play)
     })
     playButton.setScale(0.5)
-    playButton.position = CGPoint(x: 0.0, y: 0.0)
+    playButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.5)
     playButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(playButton)
+    
+    settingsButton = RBButton(buttonImage: "MiniButtonSettings", buttonAction: {
+      self.didTap(button: .settings)
+    })
+    settingsButton.setScale(0.5)
+    settingsButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.3)
+    settingsButton.zPosition = NodesZPosition.button.rawValue
+      self.addChild(settingsButton)
   }
   
   func didTap(button: RBButtonType) {
@@ -50,6 +60,10 @@ class MainMenu: SKScene {
   }
   
   func playButtonTapped() {
+    
+  }
+  
+  func settingsButtonTapped() {
     
   }
   
