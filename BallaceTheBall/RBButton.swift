@@ -14,17 +14,26 @@ class RBButton: SKNode {
   var cropNode: SKCropNode
   var action: () -> Void
   var buttonIsEnabled = true
+  var buttonTitle = SKLabelNode()
   
-  init(buttonImage: String, buttonAction: @escaping () -> Void) {
+  init(buttonImage: String, title: String, buttonAction: @escaping () -> Void) {
     button = SKSpriteNode(imageNamed: buttonImage)
     button.zPosition = 0
+    
+    buttonTitle.fontName = FontName
+    buttonTitle.fontSize = CGFloat(FontSize) * 3
+    buttonTitle.fontColor = FontColorScore
+    buttonTitle.text = title
+    buttonTitle.zPosition = 1
+    buttonTitle.horizontalAlignmentMode = .center
+    buttonTitle.verticalAlignmentMode = .center
     
     mask = SKSpriteNode(color: SKColor.black, size: button.size)
     mask.alpha = 0
     
     cropNode = SKCropNode()
     cropNode.maskNode = button
-    cropNode.zPosition = 1
+    cropNode.zPosition = 2
     cropNode.addChild(mask)
     
     action = buttonAction
@@ -33,6 +42,7 @@ class RBButton: SKNode {
     
     isUserInteractionEnabled = true
     addChild(button)
+    addChild(buttonTitle)
     addChild(cropNode)
   }
   
@@ -92,11 +102,13 @@ class RBButton: SKNode {
   func disableButton() {
     buttonIsEnabled = false
     mask.alpha = 0.7
+    buttonTitle.alpha = 0.7
   }
   
   func enableButton() {
     buttonIsEnabled = true
     mask.alpha = 0
+    buttonTitle.alpha = 1.0
   }
   
 }

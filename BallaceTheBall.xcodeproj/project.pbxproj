@@ -16,8 +16,17 @@
 		4C028E771DF376E50035EA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C028E761DF376E50035EA83 /* Assets.xcassets */; };
 		4C028E7A1DF376E50035EA83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C028E781DF376E50035EA83 /* LaunchScreen.storyboard */; };
 		4C028E821DF377050035EA83 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4C028E811DF377050035EA83 /* MainMenu.sks */; };
-		4C028E841DF377170035EA83 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C028E831DF377170035EA83 /* MainMenu.swift */; };
+		4C028E841DF377170035EA83 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C028E831DF377170035EA83 /* Settings.swift */; };
 		4C028E861DF378350035EA83 /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C028E851DF378350035EA83 /* RBButton.swift */; };
+		4CECF2941DFD4EC10069DC50 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4CECF2921DFD4EC10069DC50 /* GameOver.sks */; };
+		4CECF2951DFD4EC10069DC50 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CECF2931DFD4EC10069DC50 /* GameOver.swift */; };
+		4CECF2971DFD51B70069DC50 /* Komika_display.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CECF2961DFD51B70069DC50 /* Komika_display.ttf */; };
+		4CECF2991DFD54170069DC50 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CECF2981DFD54170069DC50 /* Setup.swift */; };
+		4CECF29B1DFD5C1F0069DC50 /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CECF29A1DFD5C1F0069DC50 /* PlayerStats.swift */; };
+		4CECF2A31DFD631E0069DC50 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CECF2A21DFD631E0069DC50 /* MainMenu.swift */; };
+		4CECF2A51DFD63530069DC50 /* Settings.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4CECF2A41DFD63530069DC50 /* Settings.sks */; };
+		4CECF2A71DFD63BA0069DC50 /* MainMenuLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CECF2A61DFD63BA0069DC50 /* MainMenuLevels.swift */; };
+		4CECF2A91DFD63CB0069DC50 /* MainMenuLevels.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4CECF2A81DFD63CB0069DC50 /* MainMenuLevels.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +41,17 @@
 		4C028E791DF376E50035EA83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C028E7B1DF376E50035EA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C028E811DF377050035EA83 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
-		4C028E831DF377170035EA83 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		4C028E831DF377170035EA83 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4C028E851DF378350035EA83 /* RBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
+		4CECF2921DFD4EC10069DC50 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		4CECF2931DFD4EC10069DC50 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		4CECF2961DFD51B70069DC50 /* Komika_display.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Komika_display.ttf; sourceTree = "<group>"; };
+		4CECF2981DFD54170069DC50 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		4CECF29A1DFD5C1F0069DC50 /* PlayerStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
+		4CECF2A21DFD631E0069DC50 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		4CECF2A41DFD63530069DC50 /* Settings.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Settings.sks; sourceTree = "<group>"; };
+		4CECF2A61DFD63BA0069DC50 /* MainMenuLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuLevels.swift; sourceTree = "<group>"; };
+		4CECF2A81DFD63CB0069DC50 /* MainMenuLevels.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuLevels.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,18 +84,27 @@
 		4C028E681DF376E50035EA83 /* BallaceTheBall */ = {
 			isa = PBXGroup;
 			children = (
+				4CECF2981DFD54170069DC50 /* Setup.swift */,
+				4CECF2961DFD51B70069DC50 /* Komika_display.ttf */,
 				4C028E691DF376E50035EA83 /* AppDelegate.swift */,
 				4C028E711DF376E50035EA83 /* GameViewController.swift */,
-				4C028E831DF377170035EA83 /* MainMenu.swift */,
-				4C028E6B1DF376E50035EA83 /* GameScene.sks */,
-				4C028E6D1DF376E50035EA83 /* Actions.sks */,
+				4CECF2A21DFD631E0069DC50 /* MainMenu.swift */,
+				4CECF2A61DFD63BA0069DC50 /* MainMenuLevels.swift */,
+				4C028E831DF377170035EA83 /* Settings.swift */,
 				4C028E6F1DF376E50035EA83 /* GameScene.swift */,
+				4CECF2931DFD4EC10069DC50 /* GameOver.swift */,
+				4C028E6D1DF376E50035EA83 /* Actions.sks */,
 				4C028E731DF376E50035EA83 /* Main.storyboard */,
 				4C028E761DF376E50035EA83 /* Assets.xcassets */,
 				4C028E781DF376E50035EA83 /* LaunchScreen.storyboard */,
 				4C028E7B1DF376E50035EA83 /* Info.plist */,
 				4C028E811DF377050035EA83 /* MainMenu.sks */,
+				4C028E6B1DF376E50035EA83 /* GameScene.sks */,
+				4CECF2A41DFD63530069DC50 /* Settings.sks */,
+				4CECF2921DFD4EC10069DC50 /* GameOver.sks */,
+				4CECF29A1DFD5C1F0069DC50 /* PlayerStats.swift */,
 				4C028E851DF378350035EA83 /* RBButton.swift */,
+				4CECF2A81DFD63CB0069DC50 /* MainMenuLevels.sks */,
 			);
 			path = BallaceTheBall;
 			sourceTree = "<group>";
@@ -114,6 +141,7 @@
 				TargetAttributes = {
 					4C028E651DF376E50035EA83 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 668R8AQ4CY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -142,11 +170,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C028E751DF376E50035EA83 /* Main.storyboard in Resources */,
+				4CECF2941DFD4EC10069DC50 /* GameOver.sks in Resources */,
+				4CECF2A91DFD63CB0069DC50 /* MainMenuLevels.sks in Resources */,
+				4CECF2A51DFD63530069DC50 /* Settings.sks in Resources */,
 				4C028E821DF377050035EA83 /* MainMenu.sks in Resources */,
 				4C028E6C1DF376E50035EA83 /* GameScene.sks in Resources */,
 				4C028E771DF376E50035EA83 /* Assets.xcassets in Resources */,
 				4C028E7A1DF376E50035EA83 /* LaunchScreen.storyboard in Resources */,
 				4C028E6E1DF376E50035EA83 /* Actions.sks in Resources */,
+				4CECF2971DFD51B70069DC50 /* Komika_display.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,10 +189,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CECF29B1DFD5C1F0069DC50 /* PlayerStats.swift in Sources */,
+				4CECF2A31DFD631E0069DC50 /* MainMenu.swift in Sources */,
 				4C028E701DF376E50035EA83 /* GameScene.swift in Sources */,
 				4C028E721DF376E50035EA83 /* GameViewController.swift in Sources */,
 				4C028E6A1DF376E50035EA83 /* AppDelegate.swift in Sources */,
-				4C028E841DF377170035EA83 /* MainMenu.swift in Sources */,
+				4CECF2951DFD4EC10069DC50 /* GameOver.swift in Sources */,
+				4C028E841DF377170035EA83 /* Settings.swift in Sources */,
+				4CECF2991DFD54170069DC50 /* Setup.swift in Sources */,
+				4CECF2A71DFD63BA0069DC50 /* MainMenuLevels.swift in Sources */,
 				4C028E861DF378350035EA83 /* RBButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 668R8AQ4CY;
 				INFOPLIST_FILE = BallaceTheBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rebeloper.BallaceTheBall;
@@ -296,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 668R8AQ4CY;
 				INFOPLIST_FILE = BallaceTheBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rebeloper.BallaceTheBall;
@@ -323,6 +362,7 @@
 				4C028E801DF376E50035EA83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
