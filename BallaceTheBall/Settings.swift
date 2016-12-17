@@ -23,7 +23,7 @@ class Settings: SKScene {
   enum NodesZPosition: CGFloat {
     case background = 0, appTitle = 1, button = 2
   }
-  
+  §
   enum RBButtonType: String {
     case MiniButtonRate
     case Settings
@@ -189,7 +189,6 @@ class Settings: SKScene {
   }
   
   func noAdsButtonTapped() {
-    func noAds() {
     
   }
   
