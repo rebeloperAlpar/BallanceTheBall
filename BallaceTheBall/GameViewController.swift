@@ -9,15 +9,29 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameViewController: UIViewController {
+  
+  lazy var backgroundMusic: AVAudioPlayer? = {
+    guard let url = Bundle.main.url(forResource: backgroundMusicName, withExtension: backgroundMusicExtension) else {
+      return nil
+  }
+  do {
+    let player = try AVAudioPlayer(contentsOf: url)
+    player.numberOfLoops = -1
+    return player
+  } catch {
+    return nil
+  }
+}()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "MainMenuLevels") {
+            if let scene = SKScene(fileNamed: "GameOver") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -30,7 +44,11 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    if PlayerStats.shared.getCurrentBoolValue(.Sound) {
+        backgroundMusic?.play()
+      }
     }
+
 
     override var shouldAutorotate: Bool {
         return true
@@ -52,4 +70,5 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+  
 }

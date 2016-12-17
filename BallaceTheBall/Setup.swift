@@ -32,3 +32,10 @@ let FontSize = 48
 
 let FontColor = SKColor.white
 let FontColorScore = SKColor.black
+
+//------- Music & Sounds File Names -------//
+
+let backgroundMusicName = "BackgroundMusic"
+let backgroundMusicExtension = "mp3"
+let hitSoundFile = "hit.wav"
+let tapSoundFile = "tap.wav"

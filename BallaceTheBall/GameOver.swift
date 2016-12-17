@@ -52,7 +52,7 @@ class GameOver: SKScene {
     self.addChild(mainMenuButton)
     
     replayButton = RBButton(buttonImage: "MiniButtonReplay", title: "", buttonAction: {
-      self.didTap(button: .MainMenu)
+      self.didTap(button: .Replay)
     })
     replayButton.setScale(0.5)
     replayButton.position = CGPoint(x: self.frame.width * 0.3, y: self.frame.height * 0.3)
@@ -60,7 +60,7 @@ class GameOver: SKScene {
     self.addChild(replayButton)
     
     shareButton = RBButton(buttonImage: "MiniButtonShare", title: "", buttonAction: {
-      self.didTap(button: .MainMenu)
+      self.didTap(button: .Share)
     })
     shareButton.setScale(0.5)
     shareButton.position = CGPoint(x: self.frame.width * 0.7, y: self.frame.height * 0.3)
@@ -128,6 +128,12 @@ class GameOver: SKScene {
 
   
   func mainMenuButtonTapped() {
+    
+    let scene = MainMenu(fileNamed: "MainMenu")
+    let transition = SKTransition.moveIn(with: SKTransitionDirection.up, duration: 0.5)
+    //let skView = self.view as SKView!
+    scene?.scaleMode = .fill
+    self.view?.presentScene(scene!, transition: transition)
     
   }
   

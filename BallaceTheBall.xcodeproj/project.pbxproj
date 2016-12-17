@@ -18,6 +18,9 @@
 		4C028E821DF377050035EA83 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4C028E811DF377050035EA83 /* MainMenu.sks */; };
 		4C028E841DF377170035EA83 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C028E831DF377170035EA83 /* Settings.swift */; };
 		4C028E861DF378350035EA83 /* RBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C028E851DF378350035EA83 /* RBButton.swift */; };
+		4C2BF72D1DFF349600770C5C /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BF72C1DFF349600770C5C /* BackgroundMusic.mp3 */; };
+		4C2BF72F1DFF349C00770C5C /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BF72E1DFF349C00770C5C /* hit.wav */; };
+		4C2BF7311DFF34A100770C5C /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BF7301DFF34A100770C5C /* tap.wav */; };
 		4CECF2941DFD4EC10069DC50 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4CECF2921DFD4EC10069DC50 /* GameOver.sks */; };
 		4CECF2951DFD4EC10069DC50 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CECF2931DFD4EC10069DC50 /* GameOver.swift */; };
 		4CECF2971DFD51B70069DC50 /* Komika_display.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CECF2961DFD51B70069DC50 /* Komika_display.ttf */; };
@@ -43,6 +46,9 @@
 		4C028E811DF377050035EA83 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		4C028E831DF377170035EA83 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4C028E851DF378350035EA83 /* RBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBButton.swift; sourceTree = "<group>"; };
+		4C2BF72C1DFF349600770C5C /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
+		4C2BF72E1DFF349C00770C5C /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hit.wav; sourceTree = "<group>"; };
+		4C2BF7301DFF34A100770C5C /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
 		4CECF2921DFD4EC10069DC50 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
 		4CECF2931DFD4EC10069DC50 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		4CECF2961DFD51B70069DC50 /* Komika_display.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Komika_display.ttf; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 		4C028E681DF376E50035EA83 /* BallaceTheBall */ = {
 			isa = PBXGroup;
 			children = (
+				4C2BF72B1DFF348500770C5C /* Music */,
 				4CECF2981DFD54170069DC50 /* Setup.swift */,
 				4CECF2961DFD51B70069DC50 /* Komika_display.ttf */,
 				4C028E691DF376E50035EA83 /* AppDelegate.swift */,
@@ -107,6 +114,16 @@
 				4CECF2A81DFD63CB0069DC50 /* MainMenuLevels.sks */,
 			);
 			path = BallaceTheBall;
+			sourceTree = "<group>";
+		};
+		4C2BF72B1DFF348500770C5C /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				4C2BF72E1DFF349C00770C5C /* hit.wav */,
+				4C2BF72C1DFF349600770C5C /* BackgroundMusic.mp3 */,
+				4C2BF7301DFF34A100770C5C /* tap.wav */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,12 +186,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2BF72F1DFF349C00770C5C /* hit.wav in Resources */,
 				4C028E751DF376E50035EA83 /* Main.storyboard in Resources */,
 				4CECF2941DFD4EC10069DC50 /* GameOver.sks in Resources */,
 				4CECF2A91DFD63CB0069DC50 /* MainMenuLevels.sks in Resources */,
 				4CECF2A51DFD63530069DC50 /* Settings.sks in Resources */,
 				4C028E821DF377050035EA83 /* MainMenu.sks in Resources */,
+				4C2BF72D1DFF349600770C5C /* BackgroundMusic.mp3 in Resources */,
 				4C028E6C1DF376E50035EA83 /* GameScene.sks in Resources */,
+				4C2BF7311DFF34A100770C5C /* tap.wav in Resources */,
 				4C028E771DF376E50035EA83 /* Assets.xcassets in Resources */,
 				4C028E7A1DF376E50035EA83 /* LaunchScreen.storyboard in Resources */,
 				4C028E6E1DF376E50035EA83 /* Actions.sks in Resources */,

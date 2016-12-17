@@ -101,8 +101,8 @@ class RBButton: SKNode {
   
   func disableButton() {
     buttonIsEnabled = false
-    mask.alpha = 0.7
-    buttonTitle.alpha = 0.7
+    mask.alpha = 0.0
+    buttonTitle.alpha = 1.0
   }
   
   func enableButton() {

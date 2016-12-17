@@ -32,7 +32,7 @@ class MainMenuLevels: SKScene {
     self.anchorPoint = CGPoint.zero
     
     background.anchorPoint = CGPoint(x: 0.0, y: 0.0)
-    background.position = CGPoint(x: self.frame.width * 0.0, y: self.frame.height * 0.0)
+    background.position = CGPoint(x: self.frame.width * -2.0, y: self.frame.height * 0.0)
     //background.setScale(0.5)
     background.zPosition = NodesZPosition.background.rawValue
     background.size = CGSize(width: self.frame.width * 3, height: self.frame.height)
@@ -62,16 +62,42 @@ class MainMenuLevels: SKScene {
     moreGamesButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(moreGamesButton)
     
-    let level1Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level2Position = CGPoint(x: self.frame.width * 0.2, y: self.frame.height * 0.2)
-    let level3Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level4Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level5Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level6Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level7Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level8Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level9Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
-    let level10Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.1)
+    let level1Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.2)
+    let level2Position = CGPoint(x: self.frame.width * 0.3, y: self.frame.height * 0.27)
+    let level3Position = CGPoint(x: self.frame.width * 0.3, y: self.frame.height * 0.4)
+    let level4Position = CGPoint(x: self.frame.width * 0.15, y: self.frame.height * 0.52)
+    let level5Position = CGPoint(x: self.frame.width * 0.25, y: self.frame.height * 0.65)
+    let level6Position = CGPoint(x: self.frame.width * 0.45, y: self.frame.height * 0.67)
+    let level7Position = CGPoint(x: self.frame.width * 0.65, y: self.frame.height * 0.65)
+    let level8Position = CGPoint(x: self.frame.width * 0.75, y: self.frame.height * 0.52)
+    let level9Position = CGPoint(x: self.frame.width * 0.7, y: self.frame.height * 0.42)
+    let level10Position = CGPoint(x: self.frame.width * 0.63, y: self.frame.height * 0.33)
+    let level11Position = CGPoint(x: self.frame.width * 0.75, y: self.frame.height * 0.25)
+    let level12Position = CGPoint(x: self.frame.width * 0.9, y: self.frame.height * 0.24)
+    let level13Position = CGPoint(x: self.frame.width * 1.1, y: self.frame.height * 0.27)
+    let level14Position = CGPoint(x: self.frame.width * 1.25, y: self.frame.height * 0.35)
+    let level15Position = CGPoint(x: self.frame.width * 1.12, y: self.frame.height * 0.45)
+    let level16Position = CGPoint(x: self.frame.width * 1.07, y: self.frame.height * 0.55)
+    let level17Position = CGPoint(x: self.frame.width * 1.25, y: self.frame.height * 0.63)
+    let level18Position = CGPoint(x: self.frame.width * 1.45, y: self.frame.height * 0.64)
+    let level19Position = CGPoint(x: self.frame.width * 1.65, y: self.frame.height * 0.63)
+    let level20Position = CGPoint(x: self.frame.width * 1.79, y: self.frame.height * 0.55)
+    let level21Position = CGPoint(x: self.frame.width * 1.77, y: self.frame.height * 0.45)
+    let level22Position = CGPoint(x: self.frame.width * 1.78, y: self.frame.height * 0.35)
+    let level23Position = CGPoint(x: self.frame.width * 1.90, y: self.frame.height * 0.26)
+    let level24Position = CGPoint(x: self.frame.width * 2.15, y: self.frame.height * 0.27)
+    let level25Position = CGPoint(x: self.frame.width * 2.32, y: self.frame.height * 0.35)
+    let level26Position = CGPoint(x: self.frame.width * 2.25, y: self.frame.height * 0.45)
+    let level27Position = CGPoint(x: self.frame.width * 2.2, y: self.frame.height * 0.55)
+    let level28Position = CGPoint(x: self.frame.width * 2.35, y: self.frame.height * 0.63)
+    let level29Position = CGPoint(x: self.frame.width * 2.55, y: self.frame.height * 0.67)
+    let level30Position = CGPoint(x: self.frame.width * 2.75, y: self.frame.height * 0.55)
+    let level31Position = CGPoint(x: self.frame.width * 2.63, y: self.frame.height * 0.45)
+    let level32Position = CGPoint(x: self.frame.width * 2.76, y: self.frame.height * 0.36)
+    let level33Position = CGPoint(x: self.frame.width * 2.86, y: self.frame.height * 0.25)
+    
+    
+    
     
     
     for i in 0 ... 32 {
@@ -108,6 +134,52 @@ class MainMenuLevels: SKScene {
         currentLevelButtonPosition = level9Position
       case 9:
         currentLevelButtonPosition = level10Position
+      case 10:
+        currentLevelButtonPosition = level11Position
+      case 11:
+        currentLevelButtonPosition = level12Position
+      case 12:
+        currentLevelButtonPosition = level13Position
+      case 13:
+        currentLevelButtonPosition = level14Position
+      case 14:
+        currentLevelButtonPosition = level15Position
+      case 15:
+        currentLevelButtonPosition = level16Position
+      case 16:
+        currentLevelButtonPosition = level17Position
+      case 17:
+        currentLevelButtonPosition = level18Position
+      case 18:
+        currentLevelButtonPosition = level19Position
+      case 19:
+        currentLevelButtonPosition = level20Position
+      case 20:
+        currentLevelButtonPosition = level21Position
+      case 21:
+        currentLevelButtonPosition = level22Position
+      case 22:
+        currentLevelButtonPosition = level23Position
+      case 23:
+        currentLevelButtonPosition = level24Position
+      case 24:
+        currentLevelButtonPosition = level25Position
+      case 25:
+        currentLevelButtonPosition = level26Position
+      case 26:
+        currentLevelButtonPosition = level27Position
+      case 27:
+        currentLevelButtonPosition = level28Position
+      case 28:
+        currentLevelButtonPosition = level29Position
+      case 29:
+        currentLevelButtonPosition = level30Position
+      case 30:
+        currentLevelButtonPosition = level31Position
+      case 31:
+        currentLevelButtonPosition = level32Position
+      case 32:
+        currentLevelButtonPosition = level33Position
         
       default:
         print("Ooops, no such button position.")
@@ -124,6 +196,9 @@ class MainMenuLevels: SKScene {
       
     }
     
+    for i in 0 ... levelButtonsArray.count - 1 {
+      levelButtonsArray[i].position = CGPoint(x: levelButtonsArray[i].position.x - self.frame.width * 2.0, y: levelButtonsArray[i].position.y)
+    }
     
     
   }
@@ -143,6 +218,10 @@ class MainMenuLevels: SKScene {
   }
   
   func settingsButtonTapped() {
+    let scene = Settings(fileNamed: "Settings")
+    let transition = SKTransition.moveIn(with: SKTransitionDirection.up, duration: 0.5)
+    scene?.scaleMode = .fill
+    self.view?.presentScene(scene!, transition: transition)
     
   }
   

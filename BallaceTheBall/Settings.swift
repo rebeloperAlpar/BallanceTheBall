@@ -100,7 +100,7 @@ class Settings: SKScene {
     gameCenterButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(gameCenterButton)
     
-    moreGamesButton = RBButton(buttonImage: "MiniButtonGameCenter", title: "", buttonAction: {
+    moreGamesButton = RBButton(buttonImage: "MiniButtonMoreGames", title: "", buttonAction: {
       self.didTap(button: .MoreGames)
     })
     moreGamesButton.setScale(0.5)
@@ -155,11 +155,25 @@ class Settings: SKScene {
   }
   
   func settingsButtonTapped() {
-    
+    let scene = MainMenu(fileNamed: "MainMenu")
+    let transition = SKTransition.moveIn(with: SKTransitionDirection.up, duration: 0.5)
+    //let skView = self.view as SKView!
+    scene?.scaleMode = .fill
+    self.view?.presentScene(scene!, transition: transition)
   }
   
   func soundOnButtonTapped() {
-    
+    if PlayerStats.shared.getCurrentBoolValue(.Sound) {
+      PlayerStats.shared.changeTo(false, forStat: .Sound)
+      soundOnButton.button.texture = SKTexture(imageNamed: "MiniButtonSoundOff")
+      let gameViewController = self.view?.window?.rootViewController as! GameViewController
+      gameViewController.backgroundMusic?.stop()
+    } else {
+      PlayerStats.shared.changeTo(true, forStat: .Sound)
+      soundOnButton.button.texture = SKTexture(imageNamed: "MiniButtonSoundOn")
+      let gameViewController = self.view?.window?.rootViewController as! GameViewController
+      gameViewController.backgroundMusic?.play()
+    }
   }
   
   func gameCenterButtonTapped() {
@@ -175,6 +189,7 @@ class Settings: SKScene {
   }
   
   func noAdsButtonTapped() {
+    func noAds() {
     
   }
   
