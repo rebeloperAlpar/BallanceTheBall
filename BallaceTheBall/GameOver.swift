@@ -34,6 +34,11 @@ class GameOver: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    
+    if showAdsOnGameOver {
+      showAds()
+    }
+    
     self.anchorPoint = CGPoint.zero
 
     background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -43,7 +48,7 @@ class GameOver: SKScene {
     background.size = CGSize(width: self.frame.width, height: self.frame.height)
     self.addChild(background)
   
-    mainMenuButton = RBButton(buttonImage: "MiniButtonHome", title: "", buttonAction: {
+    mainMenuButton = RBButton(buttonImage: "MiniButtonHome", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .MainMenu)
     })
     mainMenuButton.setScale(0.5)
@@ -51,7 +56,7 @@ class GameOver: SKScene {
     mainMenuButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(mainMenuButton)
     
-    replayButton = RBButton(buttonImage: "MiniButtonReplay", title: "", buttonAction: {
+    replayButton = RBButton(buttonImage: "MiniButtonReplay", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .Replay)
     })
     replayButton.setScale(0.5)
@@ -59,7 +64,7 @@ class GameOver: SKScene {
     replayButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(replayButton)
     
-    shareButton = RBButton(buttonImage: "MiniButtonShare", title: "", buttonAction: {
+    shareButton = RBButton(buttonImage: "MiniButtonShare", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .Share)
     })
     shareButton.setScale(0.5)
@@ -129,12 +134,17 @@ class GameOver: SKScene {
   
   func mainMenuButtonTapped() {
     
-    let scene = MainMenu(fileNamed: "MainMenu")
+    var mainMenuName = "MainMenu"
+    
+    if useLevelSystem {
+      mainMenuName = "MainMenuLevels"
+    }
+    
+    let scene = MainMenu(fileNamed: mainMenuName)
     let transition = SKTransition.moveIn(with: SKTransitionDirection.up, duration: 0.5)
     //let skView = self.view as SKView!
     scene?.scaleMode = .fill
     self.view?.presentScene(scene!, transition: transition)
-    
   }
   
   func replayButtonTapped() {
@@ -143,6 +153,16 @@ class GameOver: SKScene {
   
   func shareButtonTapped() {
     
+  }
+  
+  func showAds() {
+    if !MKStoreKit.shared().isProductPurchased(InAppPurchaseID) {
+      if !Chartboost.hasInterstitial(CBLocationGameOver) {
+        Chartboost.cacheInterstitial(CBLocationGameOver)
+      }
+      Chartboost.showInterstitial(CBLocationGameOver)
+      Chartboost.cacheInterstitial(CBLocationGameOver)
+    }
   }
   
 }

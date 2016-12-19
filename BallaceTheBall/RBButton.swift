@@ -15,8 +15,11 @@ class RBButton: SKNode {
   var action: () -> Void
   var buttonIsEnabled = true
   var buttonTitle = SKLabelNode()
+  var buttonWithStars = false
+  var buttonStarsCount = 0
+  var buttonStars: SKSpriteNode
   
-  init(buttonImage: String, title: String, buttonAction: @escaping () -> Void) {
+  init(buttonImage: String, title: String, withStars: Bool, starsCount: Int, buttonAction: @escaping () -> Void) {
     button = SKSpriteNode(imageNamed: buttonImage)
     button.zPosition = 0
     
@@ -28,12 +31,42 @@ class RBButton: SKNode {
     buttonTitle.horizontalAlignmentMode = .center
     buttonTitle.verticalAlignmentMode = .center
     
+    buttonStars = SKSpriteNode(imageNamed: "Stars1")
+    buttonStars.alpha = 0.0
+    buttonStars.zPosition = 2000
+    
+    buttonWithStars = withStars
+    
+    if buttonWithStars {
+      
+      buttonStars.alpha = 1.0
+      
+      switch starsCount {
+      case 0:
+        buttonStars.alpha = 0.0
+      case 1:
+        buttonStars.texture = SKTexture(imageNamed: "Stars1")
+      case 2:
+        buttonStars.texture = SKTexture(imageNamed: "Stars2")
+      case 3:
+        buttonStars.texture = SKTexture(imageNamed: "Stars3")
+      default:
+        print("Ooops, no such stars value.")
+        buttonStars.alpha = 0.0
+      }
+      
+      print(starsCount)
+      
+    } else {
+      print("No stars on this button")
+    }
+    
     mask = SKSpriteNode(color: SKColor.black, size: button.size)
     mask.alpha = 0
     
     cropNode = SKCropNode()
     cropNode.maskNode = button
-    cropNode.zPosition = 2
+    cropNode.zPosition = 3
     cropNode.addChild(mask)
     
     action = buttonAction
@@ -43,6 +76,8 @@ class RBButton: SKNode {
     isUserInteractionEnabled = true
     addChild(button)
     addChild(buttonTitle)
+    buttonStars.position = CGPoint(x: self.frame.midX + 4, y: self.frame.midY - 76)
+    addChild(buttonStars)
     addChild(cropNode)
   }
   

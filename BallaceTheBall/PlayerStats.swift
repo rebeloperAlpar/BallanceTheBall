@@ -39,6 +39,13 @@ class PlayerStats {
     changeTo(0, forStat: .BestScore)
     changeTo(1, forStat: .CurrentLevel)
     changeTo(1, forStat: .HighestUnlockedLevel)
+    
+    
+    for i in 1 ... 33 {
+      changeTo(0, forLevel: "Level\(i)")
+    }
+    
+    
   }
   
   func changeTo(_ value: Int, forStat: PlayerStatType) {
@@ -70,6 +77,32 @@ class PlayerStats {
   func getCurrentBoolValue(_ forStat: PlayerStatType) -> Bool {
     return UserDefaults.standard.bool(forKey: forStat.rawValue)
   }
+  
+  func changeTo(_ stars: Int, forLevel: String) {
+    UserDefaults.standard.set(stars, forKey: "Level\(forLevel)")
+    UserDefaults.standard.synchronize()
+  }
+  
+  func getStars(_ forLevel: String) -> Int {
+    return UserDefaults.standard.integer(forKey: "Level\(forLevel)")
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
 }

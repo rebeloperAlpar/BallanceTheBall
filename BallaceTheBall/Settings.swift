@@ -12,25 +12,24 @@ class Settings: SKScene {
   
   var background = SKSpriteNode(imageNamed: "MiniBackground")
   var miniButtonRate: RBButton!
-  var settingsButton: RBButton!
+  var mainMenuButton: RBButton!
   var appTitle = SKSpriteNode()
   var soundOnButton: RBButton!
   var gameCenterButton: RBButton!
   var moreGamesButton: RBButton!
-  var replayLevelButton: RBButton!
+  var restorePurchasesButton: RBButton!
   var noAdsButton: RBButton!
   
   enum NodesZPosition: CGFloat {
     case background = 0, appTitle = 1, button = 2
   }
-  §
   enum RBButtonType: String {
     case MiniButtonRate
-    case Settings
+    case MainMenu
     case SoundOn
     case GameCenter
     case MoreGames
-    case ReplayLevel
+    case RestorePurchases
     case NoAds
     
   }
@@ -68,7 +67,7 @@ class Settings: SKScene {
     appTitle.zPosition = NodesZPosition.appTitle.rawValue
     self.addChild(appTitle)
     
-    miniButtonRate = RBButton(buttonImage: "MiniButtonRate", title: "", buttonAction: {
+    miniButtonRate = RBButton(buttonImage: "MiniButtonRate", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .MiniButtonRate)
     })
     miniButtonRate.setScale(0.5)
@@ -76,15 +75,15 @@ class Settings: SKScene {
     miniButtonRate.zPosition = NodesZPosition.button.rawValue
     self.addChild(miniButtonRate)
     
-    settingsButton = RBButton(buttonImage: "MiniButtonSettings", title: "", buttonAction: {
-      self.didTap(button: .Settings)
+    mainMenuButton = RBButton(buttonImage: "MiniButtonSettings", title: "", withStars: false, starsCount: 0, buttonAction: {
+      self.didTap(button: .MainMenu)
     })
-    settingsButton.setScale(0.5)
-    settingsButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.2)
-    settingsButton.zPosition = NodesZPosition.button.rawValue
-      self.addChild(settingsButton)
+    mainMenuButton.setScale(0.5)
+    mainMenuButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.2)
+    mainMenuButton.zPosition = NodesZPosition.button.rawValue
+      self.addChild(mainMenuButton)
     
-    soundOnButton = RBButton(buttonImage: "MiniButtonSoundOn", title: "", buttonAction: {
+    soundOnButton = RBButton(buttonImage: "MiniButtonSoundOn", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .SoundOn)
     })
     soundOnButton.setScale(0.5)
@@ -92,7 +91,7 @@ class Settings: SKScene {
     soundOnButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(soundOnButton)
     
-    gameCenterButton = RBButton(buttonImage: "MiniButtonGameCenter", title: "", buttonAction: {
+    gameCenterButton = RBButton(buttonImage: "MiniButtonGameCenter", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .GameCenter)
     })
     gameCenterButton.setScale(0.5)
@@ -100,7 +99,7 @@ class Settings: SKScene {
     gameCenterButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(gameCenterButton)
     
-    moreGamesButton = RBButton(buttonImage: "MiniButtonMoreGames", title: "", buttonAction: {
+    moreGamesButton = RBButton(buttonImage: "MiniButtonMoreGames", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .MoreGames)
     })
     moreGamesButton.setScale(0.5)
@@ -108,37 +107,44 @@ class Settings: SKScene {
     moreGamesButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(moreGamesButton)
     
-    replayLevelButton = RBButton(buttonImage: "MiniButtonReplay", title: "", buttonAction: {
-      self.didTap(button: .ReplayLevel)
+    restorePurchasesButton = RBButton(buttonImage: "MiniButtonRestorePurchases", title: "", withStars: false, starsCount: 0, buttonAction: {
+      self.didTap(button: .RestorePurchases)
     })
-    replayLevelButton.setScale(0.5)
-    replayLevelButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.4)
-    replayLevelButton.zPosition = NodesZPosition.button.rawValue
-    self.addChild(replayLevelButton)
+    restorePurchasesButton.setScale(0.5)
+    restorePurchasesButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.4)
+    restorePurchasesButton.zPosition = NodesZPosition.button.rawValue
+    self.addChild(restorePurchasesButton)
     
-    noAdsButton = RBButton(buttonImage: "MiniButtonNoAds", title: "", buttonAction: {
+    noAdsButton = RBButton(buttonImage: "MiniButtonNoAds", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .NoAds)
     })
     noAdsButton.setScale(0.5)
     noAdsButton.position = CGPoint(x: self.frame.width * 0.8, y: self.frame.height * 0.4)
     noAdsButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(noAdsButton)
+    
+    if !showMoreAppsButton {
+      moreGamesButton.alpha = 0.0
+      
+      restorePurchasesButton.position = CGPoint(x: self.frame.width * 0.33, y: self.frame.height * 0.4)
+      noAdsButton.position = CGPoint(x: self.frame.width * 0.66, y: self.frame.height * 0.4)
+    }
   }
   
   func didTap(button: RBButtonType) {
     switch button {
     case .MiniButtonRate:
       miniButtonRateTapped()
-    case .Settings:
-      settingsButtonTapped()
+    case .MainMenu:
+      mainMenuButtonTapped()
     case .SoundOn:
       soundOnButtonTapped()
     case .GameCenter:
       gameCenterButtonTapped()
     case .MoreGames:
       moreGamesButtonTapped()
-    case .ReplayLevel:
-      replayLevelButtonTapped()
+    case .RestorePurchases:
+      restorePurchasesButtonTapped()
     case .NoAds:
       noAdsButtonTapped()
       
@@ -154,8 +160,15 @@ class Settings: SKScene {
     
   }
   
-  func settingsButtonTapped() {
-    let scene = MainMenu(fileNamed: "MainMenu")
+  func mainMenuButtonTapped() {
+    
+    var mainMenuName = "MainMenu"
+    
+    if useLevelSystem {
+      mainMenuName = "MainMenuLevels"
+    }
+    
+    let scene = MainMenu(fileNamed: mainMenuName)
     let transition = SKTransition.moveIn(with: SKTransitionDirection.up, duration: 0.5)
     //let skView = self.view as SKView!
     scene?.scaleMode = .fill
@@ -181,15 +194,21 @@ class Settings: SKScene {
   }
   
   func moreGamesButtonTapped() {
-    
+    if !Chartboost.hasMoreApps(CBLocationSettings) {
+      Chartboost.cacheMoreApps(CBLocationSettings)
+    }
+    Chartboost.showMoreApps(CBLocationSettings)
+    Chartboost.cacheMoreApps(CBLocationSettings)
   }
   
-  func replayLevelButtonTapped() {
-    
+  func restorePurchasesButtonTapped() {
+    print("Started restoring purchases")
+    MKStoreKit.shared().restorePurchases()
   }
   
   func noAdsButtonTapped() {
-    
+    print("Started buying No Ads IAP")
+    MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: InAppPurchaseID)
   }
   
   func touchDown(atPoint pos : CGPoint) {

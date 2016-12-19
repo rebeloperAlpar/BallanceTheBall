@@ -29,10 +29,15 @@ class MainMenuLevels: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    
+    if showAdsOnMainMenu {
+      showAds()
+    }
+    
     self.anchorPoint = CGPoint.zero
     
     background.anchorPoint = CGPoint(x: 0.0, y: 0.0)
-    background.position = CGPoint(x: self.frame.width * -2.0, y: self.frame.height * 0.0)
+    background.position = CGPoint(x: self.frame.width * 0.0, y: self.frame.height * 0.0)
     //background.setScale(0.5)
     background.zPosition = NodesZPosition.background.rawValue
     background.size = CGSize(width: self.frame.width * 3, height: self.frame.height)
@@ -46,7 +51,7 @@ class MainMenuLevels: SKScene {
     appTitle.zPosition = NodesZPosition.appTitle.rawValue
     self.addChild(appTitle)
     
-    settingsButton = RBButton(buttonImage: "ButtonOptions", title: "", buttonAction: {
+    settingsButton = RBButton(buttonImage: "ButtonOptions", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .Settings)
     })
     settingsButton.setScale(0.5)
@@ -54,13 +59,17 @@ class MainMenuLevels: SKScene {
     settingsButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(settingsButton)
     
-    moreGamesButton = RBButton(buttonImage: "ButtonMoreGames", title: "", buttonAction: {
+    moreGamesButton = RBButton(buttonImage: "ButtonMoreGames", title: "", withStars: false, starsCount: 0, buttonAction: {
       self.didTap(button: .MoreGames)
     })
     moreGamesButton.setScale(0.5)
     moreGamesButton.position = CGPoint(x: self.frame.width * 0.9, y: self.frame.height * 0.8)
     moreGamesButton.zPosition = NodesZPosition.button.rawValue
     self.addChild(moreGamesButton)
+    
+    if !showMoreAppsButton {
+      moreGamesButton.alpha = 0.0
+    }
     
     let level1Position = CGPoint(x: self.frame.width * 0.1, y: self.frame.height * 0.2)
     let level2Position = CGPoint(x: self.frame.width * 0.3, y: self.frame.height * 0.27)
@@ -101,12 +110,17 @@ class MainMenuLevels: SKScene {
     
     
     for i in 0 ... 32 {
-      let levelButton = RBButton(buttonImage: "ButtonLevel", title: "\(i + 1)" , buttonAction: { 
+      
+      let starsCount = PlayerStats.shared.getStars("Level\(i + 1)")
+      
+      print("The stars are: \(starsCount)")
+      
+      let levelButton = RBButton(buttonImage: "ButtonLevel", title: "\(i + 1)" , withStars: true, starsCount: starsCount, buttonAction: {
         PlayerStats.shared.changeTo(i + 1, forStat: .CurrentLevel)
         self.didTap(button: .Level)
       })
       
-      if i > PlayerStats.shared.getCurrentValue(.HighestUnlockedLevel) {
+      if i >= PlayerStats.shared.getCurrentValue(.HighestUnlockedLevel) {
         levelButton.disableButton()
         levelButton.button.texture = SKTexture(imageNamed: "ButtonLevelLocked")
       }
@@ -194,11 +208,16 @@ class MainMenuLevels: SKScene {
       
       levelButtonsArray.append(levelButton)
       
+      
+
+      
+      
     }
     
     for i in 0 ... levelButtonsArray.count - 1 {
-      levelButtonsArray[i].position = CGPoint(x: levelButtonsArray[i].position.x - self.frame.width * 2.0, y: levelButtonsArray[i].position.y)
+      //levelButtonsArray[i].position = CGPoint(x: levelButtonsArray[i].position.x - self.frame.width * 0.0, y: levelButtonsArray[i].position.y)
     }
+    
     
     
   }
@@ -226,7 +245,11 @@ class MainMenuLevels: SKScene {
   }
   
   func moreGamesButtonTapped() {
-    
+    if !Chartboost.hasMoreApps(CBLocationSettings) {
+      Chartboost.cacheMoreApps(CBLocationSettings)
+    }
+    Chartboost.showMoreApps(CBLocationSettings)
+    Chartboost.cacheMoreApps(CBLocationSettings)
   }
   
   func levelTapped() {
@@ -234,7 +257,15 @@ class MainMenuLevels: SKScene {
     // go to GameScene
   }
   
-  
+  func showAds() {
+    if !MKStoreKit.shared().isProductPurchased(InAppPurchaseID) {
+      if !Chartboost.hasInterstitial(CBLocationMainMenu) {
+        Chartboost.cacheInterstitial(CBLocationMainMenu)
+      }
+      Chartboost.showInterstitial(CBLocationMainMenu)
+      Chartboost.cacheInterstitial(CBLocationMainMenu)
+    }
+  }
   
   
   

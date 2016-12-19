@@ -28,6 +28,11 @@ class MainMenu: SKScene {
   }
   
   override func didMove(to view: SKView) {
+    
+    if showAdsOnMainMenu {
+      showAds()
+    }
+    
     self.anchorPoint = CGPoint.zero
   
   background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -43,7 +48,7 @@ class MainMenu: SKScene {
   appTitle.zPosition = NodesZPositon.appTitle.rawValue
   self.addChild(appTitle)
     
-  playButton = RBButton(buttonImage: "MiniButtonPlay", title: "", buttonAction: {
+  playButton = RBButton(buttonImage: "MiniButtonPlay", title: "", withStars: false, starsCount: 0, buttonAction: {
     self.didTap(button: .Play)
   })
   playButton.setScale(0.5)
@@ -51,7 +56,7 @@ class MainMenu: SKScene {
   playButton.zPosition = NodesZPositon.button.rawValue
     self.addChild(playButton)
     
-  settingsButton = RBButton(buttonImage: "MiniButtonSettings", title: "", buttonAction: {
+  settingsButton = RBButton(buttonImage: "MiniButtonSettings", title: "", withStars: false, starsCount: 0, buttonAction: {
     self.didTap(button: .Settings)
   })
   settingsButton.setScale(0.5)
@@ -59,13 +64,19 @@ class MainMenu: SKScene {
   settingsButton.zPosition = NodesZPositon.button.rawValue
   self.addChild(settingsButton)
     
-  moregamesButton = RBButton(buttonImage: "MiniButtonMoreGames", title: "", buttonAction: {
+  moregamesButton = RBButton(buttonImage: "MiniButtonMoreGames", title: "", withStars: false, starsCount: 0, buttonAction: {
     self.didTap(button: .MoreGames)
   })
   moregamesButton.setScale(0.5)
   moregamesButton.position = CGPoint(x: self.frame.width * 0.7, y: self.frame.height * 0.25)
   moregamesButton.zPosition = NodesZPositon.button.rawValue
   self.addChild(moregamesButton)
+    
+    if !showMoreAppsButton {
+      moregamesButton.alpha = 0.0
+      
+      settingsButton.position = CGPoint(x: self.frame.width * 0.5, y: self.frame.height * 0.25)
+    }
   
   }
   
@@ -96,8 +107,23 @@ class MainMenu: SKScene {
   }
   
   func moregamesButtonTapped() {
-    
+    if !Chartboost.hasMoreApps(CBLocationSettings) {
+      Chartboost.cacheMoreApps(CBLocationSettings)
+    }
+    Chartboost.showMoreApps(CBLocationSettings)
+    Chartboost.cacheMoreApps(CBLocationSettings)
   }
+  
+  func showAds() {
+    if !MKStoreKit.shared().isProductPurchased(InAppPurchaseID) {
+      if !Chartboost.hasInterstitial(CBLocationMainMenu) {
+        Chartboost.cacheInterstitial(CBLocationMainMenu)
+      }
+      Chartboost.showInterstitial(CBLocationMainMenu)
+      Chartboost.cacheInterstitial(CBLocationMainMenu)
+    }
+  }
+  
 }
 
 
