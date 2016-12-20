@@ -77,7 +77,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "MainMenuLevels") {
+            if let scene = SKScene(fileNamed: "Gameplay") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -92,7 +92,7 @@ class GameViewController: UIViewController {
         }
       
     if PlayerStats.shared.getCurrentBoolValue(.Sound) {
-        backgroundMusic?.play()
+        //backgroundMusic?.play()
     }
       
       if !MKStoreKit.shared().isProductPurchased(InAppPurchaseID) {

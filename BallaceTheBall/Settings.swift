@@ -157,7 +157,8 @@ class Settings: SKScene {
   }
   
   func miniButtonRateTapped() {
-    
+    RateMyApp.sharedInstance.okButtonPressed()
+    print("Rate button tapped. Going to the App Store. If your app is not yet on the App Store nothing will happen, but this is perfectly fine. The app will go to the app's page once it is live on the App Store.")
   }
   
   func mainMenuButtonTapped() {
@@ -190,7 +191,7 @@ class Settings: SKScene {
   }
   
   func gameCenterButtonTapped() {
-    
+    GCHelper.sharedInstance.showGameCenter((self.view?.window?.rootViewController)!, viewState: .leaderboards)
   }
   
   func moreGamesButtonTapped() {

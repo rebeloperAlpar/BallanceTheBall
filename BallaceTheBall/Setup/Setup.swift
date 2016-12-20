@@ -64,3 +64,23 @@ let showMoreAppsButton = true
 let showAdsOnMainMenu = true
 let showAdsOnGameOver = true
 
+//------- App ID -------//
+
+let appID = "1180198006"
+
+//------- Rate Popup -------//
+
+let rateAlertTitle = "Rate the app"
+let rateAlertMessagePart1 = "If you found"
+
+// IMPORTANT: Next comes the name of the App that will be fetched by code from the Info.plist file; please go and set it up at the 'Bundle Display Name' now!!!
+
+let rateAlertMessagePart2 = "useful, please take a moment to rate it"
+let rateAlertOKTitle = "Rate it now"
+let rateAlertCancelTitle = "Don't bother me again"
+let rateAlertRemindLaterTitle = "Remind me later"
+let rateAlertPromptAfterDays = 1.0 // Ex. '1.5' means one and a half days
+let rateAlertPromptAfterUses = 3
+let rateAlertDaysBeforeReminding = 1.0
+
+

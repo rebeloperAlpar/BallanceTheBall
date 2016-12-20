@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     PlayerStats.shared.setupDefaultValues()
+    GCHelper.sharedInstance.authenticateLocalUser()
     setupStore()
     setupChartboost()
+    setupRateMyApp()
     
     return true
   }
@@ -59,6 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Chartboost.cacheInterstitial(CBLocationMainMenu)
     Chartboost.cacheInterstitial(CBLocationGameOver)
     Chartboost.cacheMoreApps(CBLocationSettings)
+  }
+  
+  func setupRateMyApp() {
+    let rate = RateMyApp.sharedInstance
+    rate.appID = appID
+    //rate.debugEnabled(true)
+    rate.promptAfterDays = rateAlertPromptAfterDays
+    rate.promptAfterUses = rateAlertPromptAfterUses
+    rate.daysBeforeReminding = rateAlertDaysBeforeReminding
+    
   }
 
 
