@@ -79,8 +79,10 @@ class PlayerStats {
   }
   
   func changeTo(_ stars: Int, forLevel: String) {
-    UserDefaults.standard.set(stars, forKey: "Level\(forLevel)")
-    UserDefaults.standard.synchronize()
+    if getStars(forLevel) < stars {
+      UserDefaults.standard.set(stars, forKey: "Level\(forLevel)")
+      UserDefaults.standard.synchronize()
+    }
   }
   
   func getStars(_ forLevel: String) -> Int {

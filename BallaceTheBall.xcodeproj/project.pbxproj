@@ -19,6 +19,7 @@
 		4C2BF72D1DFF349600770C5C /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BF72C1DFF349600770C5C /* BackgroundMusic.mp3 */; };
 		4C2BF72F1DFF349C00770C5C /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BF72E1DFF349C00770C5C /* hit.wav */; };
 		4C2BF7311DFF34A100770C5C /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BF7301DFF34A100770C5C /* tap.wav */; };
+		4C548D6B1E0C1ADA006CD476 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C548D6A1E0C1AD9006CD476 /* RandomGenerator.swift */; };
 		4CE0B03A1E08831B00092869 /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE0B0361E08831B00092869 /* MKStoreKit.m */; };
 		4CE0B03B1E08831B00092869 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CE0B0381E08831B00092869 /* MKStoreKitConfigs.plist */; };
 		4CE0B03C1E08831B00092869 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE0B0391E08831B00092869 /* Setup.swift */; };
@@ -59,6 +60,7 @@
 		4C2BF72C1DFF349600770C5C /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
 		4C2BF72E1DFF349C00770C5C /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hit.wav; sourceTree = "<group>"; };
 		4C2BF7301DFF34A100770C5C /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		4C548D6A1E0C1AD9006CD476 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
 		4CE0B0351E08831B00092869 /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
 		4CE0B0361E08831B00092869 /* MKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreKit.m; sourceTree = "<group>"; };
 		4CE0B0381E08831B00092869 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
@@ -133,8 +135,8 @@
 				4CECF2A21DFD631E0069DC50 /* MainMenu.swift */,
 				4CECF2A61DFD63BA0069DC50 /* MainMenuLevels.swift */,
 				4CF448F51E09C01400BC0C8D /* Gameplay.swift */,
-				4C028E831DF377170035EA83 /* Settings.swift */,
 				4CECF2931DFD4EC10069DC50 /* GameOver.swift */,
+				4C028E831DF377170035EA83 /* Settings.swift */,
 				4C028E6D1DF376E50035EA83 /* Actions.sks */,
 				4C028E731DF376E50035EA83 /* Main.storyboard */,
 				4C028E761DF376E50035EA83 /* Assets.xcassets */,
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF448FF1E09CFCE00BC0C8D /* MotionKit.swift */,
+				4C548D6A1E0C1AD9006CD476 /* RandomGenerator.swift */,
 				4CF448ED1E09BDC500BC0C8D /* RateMyApp.swift */,
 				4CF448EB1E09BCEA00BC0C8D /* GCHelper.swift */,
 				4CE0B03E1E08855A00092869 /* Chartboost.framework */,
@@ -296,6 +299,7 @@
 			files = (
 				4CE0B03C1E08831B00092869 /* Setup.swift in Sources */,
 				4CECF29B1DFD5C1F0069DC50 /* PlayerStats.swift in Sources */,
+				4C548D6B1E0C1ADA006CD476 /* RandomGenerator.swift in Sources */,
 				4CECF2A31DFD631E0069DC50 /* MainMenu.swift in Sources */,
 				4CF448EC1E09BCEA00BC0C8D /* GCHelper.swift in Sources */,
 				4CF449001E09CFCE00BC0C8D /* MotionKit.swift in Sources */,

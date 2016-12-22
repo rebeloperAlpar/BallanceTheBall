@@ -253,8 +253,10 @@ class MainMenuLevels: SKScene {
   }
   
   func levelTapped() {
-    
-    // go to GameScene
+    let scene = Gameplay(fileNamed: "Gameplay")
+    let transition = SKTransition.moveIn(with: SKTransitionDirection.up, duration: 0.5)
+    scene?.scaleMode = .fill
+    self.view?.presentScene(scene!, transition: transition)
   }
   
   func showAds() {
